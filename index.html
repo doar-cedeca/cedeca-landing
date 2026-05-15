@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEDECA — Centro de Defesa da Criança e do Adolescente</title>
+  <meta name="description" content="Protegendo o futuro das crianças e adolescentes. Faça parte dessa transformação.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">CEDECA</div>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+        <a href="#doe" class="btn-nav">Doe Agora</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="container">
+      <span class="tag">Centro de Defesa da Criança e do Adolescente</span>
+      <h1>Protegendo o futuro de quem mais precisa</h1>
+      <p>Trabalhamos para garantir os direitos fundamentais de crianças e adolescentes em situação de vulnerabilidade. Cada doação transforma uma vida.</p>
+      <div class="hero-actions">
+        <a href="#doe" class="btn-primary">Quero Doar</a>
+        <a href="#sobre" class="btn-secondary">Conheça o CEDECA</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="numeros">
+    <div class="container">
+      <div class="numero-item">
+        <span class="numero">+500</span>
+        <span class="label">Crianças atendidas por ano</span>
+      </div>
+      <div class="numero-item">
+        <span class="numero">+20</span>
+        <span class="label">Anos de atuação</span>
+      </div>
+      <div class="numero-item">
+        <span class="numero">+30</span>
+        <span class="label">Projetos realizados</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sobre" id="sobre">
+    <div class="container">
+      <div class="sobre-content">
+        <div class="sobre-text">
+          <span class="section-tag">Quem somos</span>
+          <h2>Defendendo direitos, construindo futuros</h2>
+          <p>O CEDECA é uma organização da sociedade civil dedicada à defesa dos direitos de crianças e adolescentes em situação de vulnerabilidade social, combatendo a violência, o abandono e a exclusão.</p>
+          <p>Atuamos junto às famílias, comunidades e poder público para garantir que toda criança tenha acesso à saúde, educação, proteção e amor.</p>
+        </div>
+        <div class="sobre-cards">
+          <div class="card">
+            <div class="card-icon">🛡️</div>
+            <h3>Proteção</h3>
+            <p>Atuamos em casos de violência e vulnerabilidade, oferecendo apoio jurídico e psicossocial.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">📚</div>
+            <h3>Educação</h3>
+            <p>Programas educacionais que ampliam oportunidades e fortalecem o desenvolvimento.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🤝</div>
+            <h3>Família</h3>
+            <p>Fortalecimento dos vínculos familiares e comunitários para uma criação saudável.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doe" id="doe">
+    <div class="container">
+      <span class="section-tag light">Faça a diferença</span>
+      <h2>Sua doação transforma vidas</h2>
+      <p>Cada contribuição, por menor que seja, chega diretamente a quem mais precisa. Seja mensal ou pontual, sua doação protege o futuro de uma criança.</p>
+      <div class="valores">
+        <button class="valor-btn" onclick="selecionarValor(this, 'R$ 20')">R$ 20</button>
+        <button class="valor-btn" onclick="selecionarValor(this, 'R$ 50')">R$ 50</button>
+        <button class="valor-btn ativo" onclick="selecionarValor(this, 'R$ 100')">R$ 100</button>
+        <button class="valor-btn" onclick="selecionarValor(this, 'Outro')">Outro valor</button>
+      </div>
+      <a href="#contato" class="btn-primary large">Quero Contribuir</a>
+    </div>
+  </section>
+
+  <section class="contato" id="contato">
+    <div class="container">
+      <span class="section-tag">Entre em contato</span>
+      <h2>Fale com a gente</h2>
+      <form class="form-contato">
+        <div class="form-row">
+          <input type="text" placeholder="Seu nome" required>
+          <input type="email" placeholder="Seu e-mail" required>
+        </div>
+        <textarea placeholder="Sua mensagem..." rows="5" required></textarea>
+        <button type="submit" class="btn-primary">Enviar Mensagem</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-logo">CEDECA</div>
+      <p>Centro de Defesa da Criança e do Adolescente</p>
+      <p class="footer-copy">© 2026 CEDECA. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    function selecionarValor(el, val) {
+      document.querySelectorAll('.valor-btn').forEach(b => b.classList.remove('ativo'));
+      el.classList.add('ativo');
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
