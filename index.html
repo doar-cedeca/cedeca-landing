@@ -369,8 +369,8 @@ function App() {
                 className="w-[130px] md:w-[170px]" />
               <Reveal>
                 <h1 className="font-display text-5xl md:text-7xl font-black leading-[0.88] mb-6 uppercase">
-                  Construindo a<br/>
-                  <span className="text-[#0099FF]">Casa dos</span><br/>
+                  Construindo<br/>
+                  <span className="text-[#0099FF]">a Casa dos</span><br/>
                   <span className="text-[#FF5C39]">Direitos</span>
                 </h1>
               </Reveal>
@@ -378,15 +378,16 @@ function App() {
                 <p className="text-xl md:text-2xl font-medium mb-8 max-w-lg text-[#1A1A1A]/75">
                   Há quase 20 anos defendendo direitos de crianças e adolescentes. Agora precisamos de um espaço definitivo para continuar.
                 </p>
-                <div className="flex items-start gap-3 p-4 bg-[#D4FF00] w-fit mb-8 organic-shape-4">
-                  <IcoShield c="w-7 h-7 flex-shrink-0 mt-0.5" />
-                  <p className="font-bold text-sm leading-snug max-w-[240px]">
+                <div className="flex items-start gap-4 bg-[#D4FF00] w-fit mb-8 organic-shape-4" style={{padding:'22px 28px'}}>
+                  <IcoShield c="w-7 h-7 flex-shrink-0 mt-1" />
+                  <p style={{fontWeight:'600',fontSize:'clamp(16px,0.95vw,19px)',lineHeight:'1.38',letterSpacing:'-0.01em',maxWidth:'240px'}}>
                     Não estamos construindo paredes. Estamos protegendo infâncias e adolescências.
                   </p>
                 </div>
                 <button onClick={()=>goTo('doacao')}
-                  className="inline-flex items-center gap-2 bg-[#1A1A1A] text-[#F2F0E6] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#0099FF] transition-colors duration-300">
-                  Quero fazer parte <IcoArrow c="w-5 h-5" />
+                  className="inline-flex items-center justify-center gap-3 bg-[#1A1A1A] text-[#F2F0E6] rounded-full font-bold hover:bg-[#0099FF] transition-colors duration-300"
+                  style={{minWidth:'300px',height:'72px',padding:'0 36px',fontSize:'18px',fontWeight:'700'}}>
+                  Quero fazer parte <IcoArrow c="w-6 h-6" />
                 </button>
               </Reveal>
             </div>
@@ -668,9 +669,9 @@ function App() {
 
                   {/* Seta */}
                   <Reveal delay={200} className="flex-shrink-0 pb-16">
-                    <svg width="40" height="20" viewBox="0 0 40 20" fill="none">
-                      <line x1="0" y1="10" x2="30" y2="10" stroke="rgba(255,255,255,0.45)" strokeWidth="1.5" strokeLinecap="round"/>
-                      <path d="M23 4 L32 10 L23 16" stroke="rgba(255,255,255,0.45)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <svg width="56" height="28" viewBox="0 0 56 28" fill="none">
+                      <line x1="0" y1="14" x2="40" y2="14" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                      <path d="M32 5 L52 14 L32 23" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </Reveal>
 
@@ -758,13 +759,13 @@ function App() {
                   <img src="assets/img/5.png" alt="Criança atendida pelo CEDECA" className="w-full h-full object-cover" />
                 </div>
               </div>
-              <h2 className="font-display text-4xl md:text-5xl font-black mb-10">Essa luta já mudou muitas histórias</h2>
-              <blockquote className="text-2xl md:text-3xl font-display font-bold leading-snug text-[#D4FF00] mb-6">
+              <h2 className="font-display text-4xl md:text-5xl font-black mb-10" style={{lineHeight:'1.1',letterSpacing:'-0.02em'}}>Essa luta já mudou muitas histórias</h2>
+              <blockquote className="text-2xl md:text-3xl font-display font-semibold text-[#D4FF00] mb-8" style={{lineHeight:'1.48',letterSpacing:'-0.01em',maxWidth:'740px',margin:'0 auto 2rem'}}>
                 "Em um momento muito difícil, o CEDECA me escutou, me protegeu e me ajudou a recomeçar. Hoje eu sei que meus direitos importam e que não estou sozinha."
               </blockquote>
-              <p className="text-lg opacity-60">— Ana Clara, 13 anos, atendida pelo CEDECA</p>
-              <div className="mt-16 pt-12 border-t border-white/15">
-                <p className="text-xl max-w-2xl mx-auto">Há quase 20 anos, o CEDECA atua na defesa dos direitos de crianças e adolescentes, sendo <strong className="text-[#0099FF]">referência nacional</strong> nessa área.</p>
+              <p className="text-base mt-6" style={{opacity:'0.52',letterSpacing:'0.01em'}}>— Ana Clara, 13 anos, atendida pelo CEDECA</p>
+              <div className="mt-14 pt-10 border-t border-white/15">
+                <p className="text-xl max-w-2xl mx-auto" style={{lineHeight:'1.65'}}>Há quase 20 anos, o CEDECA atua na defesa dos direitos de crianças e adolescentes, sendo <strong className="text-[#0099FF]">referência nacional</strong> nessa área.</p>
               </div>
             </Reveal>
           </div>
