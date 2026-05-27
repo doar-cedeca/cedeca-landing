@@ -505,8 +505,8 @@ function App() {
                   )
                 }
               ].map((item,i) => (
-                <Reveal key={i} delay={i*90}>
-                  <div className="flex flex-col items-center">
+                <Reveal key={i} delay={i*90} className="h-full">
+                  <div className="flex flex-col items-center h-full">
                     {/* Blob superior — orgânico, colorido, sobrepõe a base */}
                     <div style={{
                       width:'88px', height:'78px',
@@ -518,7 +518,7 @@ function App() {
                     }}>
                       {item.ico}
                     </div>
-                    {/* Base inferior — branca, orgânica, recebe a sobreposição */}
+                    {/* Base inferior — branca, orgânica, cresce para igualar altura */}
                     <div style={{
                       backgroundColor:'#FFFFFF',
                       borderRadius:item.baseShape,
@@ -527,12 +527,13 @@ function App() {
                       paddingRight:'22px',
                       paddingBottom:'28px',
                       width:'100%',
+                      flexGrow:1,
                       position:'relative',
                       zIndex:1,
                       textAlign:'center'
                     }}>
-                      <h3 style={{fontSize:'clamp(16px,1vw,19px)',fontWeight:'700',color:'#1A1A1A',marginBottom:'10px',lineHeight:'1.2',letterSpacing:'-0.01em'}}>{item.title}</h3>
-                      <p style={{fontSize:'clamp(13px,0.85vw,16px)',lineHeight:'1.55',color:'rgba(26,26,26,0.62)',maxWidth:'210px',margin:'0 auto'}}>{item.desc}</p>
+                      <h3 style={{fontSize:'clamp(19px,1.2vw,23px)',fontWeight:'700',color:'#1A1A1A',marginBottom:'10px',lineHeight:'1.2',letterSpacing:'-0.01em'}}>{item.title}</h3>
+                      <p style={{fontSize:'clamp(16px,1vw,19px)',lineHeight:'1.55',color:'rgba(26,26,26,0.62)',maxWidth:'210px',margin:'0 auto'}}>{item.desc}</p>
                     </div>
                   </div>
                 </Reveal>
