@@ -358,24 +358,15 @@ function App() {
   return (
     <div className="min-h-screen bg-[#F2F0E6] text-[#1A1A1A] overflow-x-hidden">
 
-      {/* ══ HEADER ══ */}
-      <header className="fixed w-full top-0 z-50 bg-[#F2F0E6] border-b border-[#1A1A1A]/10">
-        <div className="max-w-7xl mx-auto px-5 py-2 flex justify-between items-center">
-          <img src="assets/logos/logo-casa-preta.png" alt="Casa dos Direitos" className="h-16 w-auto" />
-          <button onClick={()=>goTo('doacao')}
-            className="bg-[#1A1A1A] text-[#F2F0E6] px-6 py-3 rounded-full font-bold text-sm hover:bg-[#D4FF00] hover:text-[#1A1A1A] transition-colors duration-300">
-            Doar agora
-          </button>
-        </div>
-      </header>
-
-      <main className="pt-24">
+      <main>
 
         {/* ══ HERO ══ */}
         <section className="max-w-7xl mx-auto px-6 pt-12 pb-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
-              <Tag text="campanha de doação" align="left" />
+              <img src="assets/logos/logo-casa-preta.png" alt="Casa dos Direitos"
+                style={{width:'170px', height:'auto', marginBottom:'52px'}}
+                className="w-[130px] md:w-[170px]" />
               <Reveal>
                 <h1 className="font-display text-5xl md:text-7xl font-black leading-[0.88] mb-6 uppercase">
                   Construindo a<br/>
@@ -830,7 +821,7 @@ function App() {
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <Reveal>
-              <h2 className="font-display text-4xl md:text-5xl font-black mb-6 leading-tight">
+              <h2 className="font-display text-4xl md:text-5xl font-black mb-6" style={{lineHeight:'1.16',letterSpacing:'-0.025em',maxWidth:'720px'}}>
                 Construir essa casa é fortalecer o CEDECA para que siga atuando com ainda mais estrutura.
               </h2>
               <p className="text-xl text-[#D4FF00] mb-10 font-medium">Para que mais crianças e adolescentes tenham seus direitos defendidos.</p>
