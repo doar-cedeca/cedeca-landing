@@ -431,11 +431,11 @@ function App() {
           <div className="max-w-6xl mx-auto px-6">
 
             {/* Headline — toda branca, sem tag CONTEXTO */}
-            <Reveal className="text-center mb-16">
-              <h2 className="font-display font-black text-white mb-5" style={{lineHeight:'1.06',fontSize:'clamp(2rem,4.5vw,3.2rem)'}}>
+            <Reveal className="text-center mb-12">
+              <h2 className="font-display font-black text-white mb-6" style={{lineHeight:'1.06',fontSize:'clamp(2rem,4.5vw,3.2rem)'}}>
                 O que essa luta enfrenta<br/>todos os dias
               </h2>
-              <p className="max-w-md mx-auto" style={{color:'rgba(255,255,255,0.72)',fontSize:'16px',lineHeight:'1.75'}}>
+              <p className="max-w-3xl mx-auto text-center" style={{color:'rgba(255,255,255,0.82)',fontSize:'clamp(17px,1.3vw,22px)',lineHeight:'1.55'}}>
                 Todos os dias, crianças e adolescentes enfrentam violações que exigem acolhimento, proteção e presença contínua.
               </p>
             </Reveal>
@@ -522,16 +522,17 @@ function App() {
                     <div style={{
                       backgroundColor:'#FFFFFF',
                       borderRadius:item.baseShape,
-                      paddingTop:'34px',
+                      paddingTop:'38px',
                       paddingLeft:'22px',
                       paddingRight:'22px',
-                      paddingBottom:'26px',
+                      paddingBottom:'28px',
                       width:'100%',
                       position:'relative',
-                      zIndex:1
+                      zIndex:1,
+                      textAlign:'center'
                     }}>
-                      <h3 style={{fontSize:'14px',fontWeight:'700',color:'#1A1A1A',marginBottom:'8px',lineHeight:'1.3'}}>{item.title}</h3>
-                      <p style={{fontSize:'12.5px',lineHeight:'1.75',color:'rgba(26,26,26,0.62)'}}>{item.desc}</p>
+                      <h3 style={{fontSize:'clamp(16px,1vw,19px)',fontWeight:'700',color:'#1A1A1A',marginBottom:'10px',lineHeight:'1.2',letterSpacing:'-0.01em'}}>{item.title}</h3>
+                      <p style={{fontSize:'clamp(13px,0.85vw,16px)',lineHeight:'1.55',color:'rgba(26,26,26,0.62)',maxWidth:'210px',margin:'0 auto'}}>{item.desc}</p>
                     </div>
                   </div>
                 </Reveal>
@@ -743,11 +744,11 @@ function App() {
                 },
               ].map((b,i) => (
                 <Reveal key={i} delay={i*80}>
-                  <div className="bg-white text-[#1A1A1A] flex flex-col h-full"
-                    style={{borderRadius:b.shape, padding:'28px 24px'}}>
+                  <div className="bg-white text-[#1A1A1A] flex flex-col h-full items-center text-center"
+                    style={{borderRadius:b.shape, padding:'34px 28px 32px'}}>
                     <div className={`w-14 h-14 rounded-full ${b.bg} flex items-center justify-center flex-shrink-0 mb-5`}>{b.ico}</div>
-                    <h4 className="font-bold leading-snug mb-3" style={{fontSize:'13px'}}>{b.title}</h4>
-                    <p className="leading-relaxed" style={{fontSize:'11.5px',color:'rgba(26,26,26,0.6)'}}>{b.desc}</p>
+                    <h4 className="font-bold mb-3" style={{fontSize:'clamp(17px,1vw,20px)',lineHeight:'1.25',letterSpacing:'-0.01em'}}>{b.title}</h4>
+                    <p style={{fontSize:'clamp(14px,0.85vw,16px)',lineHeight:'1.55',color:'rgba(26,26,26,0.6)',maxWidth:'260px'}}>{b.desc}</p>
                   </div>
                 </Reveal>
               ))}
