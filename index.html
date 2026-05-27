@@ -499,86 +499,107 @@ function App() {
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
 
-            {/* ── PARTE 1: Problema + imagem da sala ── */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-20">
+            {/* ── PARTE 1: 44% bloco texto / 56% imagem ── */}
+            <div className="flex flex-col lg:flex-row gap-8 items-start mb-20">
 
-              {/* Placa orgânica branca — mantida */}
-              <Reveal>
-                <div className="bg-white text-[#1A1A1A] p-8 md:p-10"
-                  style={{borderRadius:'60px 140px 60px 40px / 40px 60px 120px 60px'}}>
-                  <Tag text="o desafio" align="left" />
-                  <h2 className="font-display text-4xl md:text-5xl font-black leading-tight mb-6">
-                    Uma luta essencial,<br/>
-                    <span style={{color:'#FF5C39'}}>sem um lugar fixo</span>
-                  </h2>
-                  <div className="space-y-4">
-                    {[
-                      "Atuamos em espaços improvisados, alugados e inconstantes.",
-                      "Documentos, arquivos e atendimentos não têm a estrutura que merecem.",
-                      "A falta de espaço limita nossa equipe, os atendimentos e o acolhimento.",
-                      "Sonhamos com um lugar seguro, acessível e feito para transformar vidas."
-                    ].map((t,i) => (
-                      <div key={i} className="flex gap-3 items-start">
-                        <div className="w-6 h-6 rounded-full flex-shrink-0 mt-0.5 flex items-center justify-center"
-                          style={{backgroundColor:'#FF5C39'}}>
-                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3.5" strokeLinecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+              {/* Bloco branco — mantido intacto */}
+              <div className="w-full lg:flex-none" style={{flexBasis:'44%'}}>
+                <Reveal>
+                  <div className="bg-white text-[#1A1A1A] p-8 md:p-10"
+                    style={{borderRadius:'60px 140px 60px 40px / 40px 60px 120px 60px'}}>
+                    <Tag text="o desafio" align="left" />
+                    <h2 className="font-display text-4xl md:text-5xl font-black leading-tight mb-6">
+                      Uma luta essencial,<br/>
+                      <span style={{color:'#FF5C39'}}>sem um lugar fixo</span>
+                    </h2>
+                    <div className="space-y-4">
+                      {[
+                        "Atuamos em espaços improvisados, alugados e inconstantes.",
+                        "Documentos, arquivos e atendimentos não têm a estrutura que merecem.",
+                        "A falta de espaço limita nossa equipe, os atendimentos e o acolhimento.",
+                        "Sonhamos com um lugar seguro, acessível e feito para transformar vidas."
+                      ].map((t,i) => (
+                        <div key={i} className="flex gap-3 items-start">
+                          <div className="w-6 h-6 rounded-full flex-shrink-0 mt-0.5 flex items-center justify-center"
+                            style={{backgroundColor:'#FF5C39'}}>
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3.5" strokeLinecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                          </div>
+                          <p className="text-base font-medium leading-snug" style={{color:'rgba(26,26,26,0.82)'}}>{t}</p>
                         </div>
-                        <p className="text-base font-medium leading-snug" style={{color:'rgba(26,26,26,0.82)'}}>{t}</p>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </Reveal>
+                </Reveal>
+              </div>
 
-              {/* PNG recortado no Photoshop + blob vermelho */}
-              <Reveal delay={200} className="relative pt-2">
-                <img src="assets/img/sala-atual.png" alt="Escritório improvisado do CEDECA" className="w-full h-auto" />
-                {/* Blob orgânico — rosto triste, texto leve */}
-                <div className="absolute bottom-4 -right-2 md:-right-5 w-48 h-48 bg-[#922B21] text-white flex flex-col items-center justify-center text-center p-5 shadow-2xl"
-                  style={{borderRadius:'60% 40% 30% 70% / 60% 30% 70% 40%'}}>
-                  <IcoSad c="w-7 h-7 mb-2.5 flex-shrink-0" />
-                  <p style={{fontSize:'10.5px',fontWeight:'400',lineHeight:'1.65'}}>Hoje, a estrutura que temos não acompanha a urgência da nossa missão.</p>
-                </div>
-              </Reveal>
+              {/* Imagem sala (56%) + blob rosa orgânico */}
+              <div className="w-full lg:flex-none relative" style={{flexBasis:'56%'}}>
+                <Reveal delay={150}>
+                  <img src="assets/img/sala-atual.png" alt="Escritório improvisado do CEDECA" className="w-full h-auto" />
+                  {/* Blob rosa vibrante — rosto triste refinado */}
+                  <div className="absolute -bottom-4 -right-5 flex flex-col items-center justify-center text-center text-white shadow-2xl"
+                    style={{
+                      width:'224px', height:'224px',
+                      backgroundColor:'#D44B82',
+                      borderRadius:'70% 30% 55% 45% / 45% 55% 30% 70%',
+                      padding:'30px'
+                    }}>
+                    {/* Rosto triste refinado */}
+                    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" style={{marginBottom:'10px',flexShrink:0}}>
+                      <circle cx="12" cy="12" r="10"/>
+                      <circle cx="8.8" cy="10" r="1.3" fill="white" stroke="none"/>
+                      <circle cx="15.2" cy="10" r="1.3" fill="white" stroke="none"/>
+                      <path d="M8.5 15.8 Q12 12.5 15.5 15.8"/>
+                    </svg>
+                    <p style={{fontSize:'11px',fontWeight:'400',lineHeight:'1.7',margin:0}}>
+                      Hoje, a estrutura que temos não acompanha a urgência da nossa missão.
+                    </p>
+                  </div>
+                </Reveal>
+              </div>
             </div>
 
             {/* ── PARTE 2: Solução ── */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-end mb-14">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-end mb-16">
 
-              {/* Texto da solução */}
+              {/* Texto — mais respiro */}
               <Reveal>
-                <p className="font-black uppercase tracking-widest mb-3" style={{fontSize:'11px',opacity:0.55}}>A Casa dos Direitos:</p>
-                <h2 className="font-display text-3xl md:text-4xl font-black leading-snug mb-4 text-white">
-                  o futuro que<br/>queremos construir
+                <p className="font-black uppercase tracking-widest mb-4" style={{fontSize:'11px',opacity:0.5}}>A Casa dos Direitos:</p>
+                <h2 className="font-display text-3xl md:text-4xl font-black mb-5 text-white" style={{lineHeight:'1.15'}}>
+                  o futuro que<br/>queremos<br/>construir
                 </h2>
-                <p className="text-sm leading-relaxed" style={{opacity:0.8}}>
-                  Um espaço permanente, acolhedor e acessível para fortalecer ainda mais a defesa dos direitos de crianças e adolescentes no Tocantins.
+                <p className="text-sm leading-loose" style={{opacity:0.82}}>
+                  Um espaço permanente, acolhedor e acessível para fortalecer a defesa dos direitos de crianças e adolescentes no Tocantins.
                 </p>
               </Reveal>
 
               {/* Terreno → seta → Sede */}
               <div className="lg:col-span-2">
-                <div className="flex items-end gap-4">
+                <div className="flex items-end gap-5">
 
-                  {/* PNG do lote sem máscara + selo orgânico */}
-                  <Reveal delay={100} className="flex-1 relative pb-9">
+                  {/* Lote + selo premium */}
+                  <Reveal delay={100} className="flex-1 relative pb-14">
                     <img src="assets/img/lote.png" alt="Terreno adquirido" className="w-full h-auto" />
-                    <div className="absolute bottom-0 left-0 bg-[#B8F070] text-[#1A1A1A] px-3 py-2 flex items-center gap-2 shadow-lg"
-                      style={{fontSize:'11px',fontWeight:'800',borderRadius:'36px 8px 36px 8px'}}>
-                      <IcoPin c="w-3.5 h-3.5 flex-shrink-0" />
-                      Terreno já adquirido
+                    {/* Selo premium */}
+                    <div className="absolute bottom-0 left-0 inline-flex items-center gap-3 bg-[#B8F070] text-[#1A1A1A] shadow-xl"
+                      style={{padding:'10px 18px', borderRadius:'32px 8px 24px 8px'}}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" style={{flexShrink:0}}>
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                        <circle cx="12" cy="9" r="2.5"/>
+                      </svg>
+                      <span style={{fontSize:'12px',fontWeight:'800',letterSpacing:'0.01em'}}>Terreno já adquirido</span>
                     </div>
                   </Reveal>
 
-                  {/* Seta discreta */}
-                  <Reveal delay={200} className="flex-shrink-0 pb-12">
-                    <svg width="36" height="18" viewBox="0 0 36 18" fill="none">
-                      <line x1="0" y1="9" x2="28" y2="9" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeLinecap="round"/>
-                      <path d="M22 3 L30 9 L22 15" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  {/* Seta */}
+                  <Reveal delay={200} className="flex-shrink-0 pb-16">
+                    <svg width="40" height="20" viewBox="0 0 40 20" fill="none">
+                      <line x1="0" y1="10" x2="30" y2="10" stroke="rgba(255,255,255,0.45)" strokeWidth="1.5" strokeLinecap="round"/>
+                      <path d="M23 4 L32 10 L23 16" stroke="rgba(255,255,255,0.45)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </Reveal>
 
-                  {/* PNG da sede pronta sem máscara */}
+                  {/* Sede pronta */}
                   <Reveal delay={300} className="flex-1">
                     <img src="assets/img/sede-pronta.png" alt="Render da Casa dos Direitos" className="w-full h-auto" />
                   </Reveal>
@@ -586,22 +607,65 @@ function App() {
               </div>
             </div>
 
-            {/* ── PARTE 3: Cards brancos de benefícios ── */}
+            {/* ── PARTE 3: Cards brancos premium ── */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
               {[
-                { ico:<IcoHouse2 c="w-6 h-6 text-white"/>,   bg:"bg-[#0099FF]", shape:'40px 12px 40px 12px', title:"Espaço próprio e adequado",     desc:"Ambientes estruturados para atendimentos, formações e reuniões." },
-                { ico:<IcoPeople c="w-6 h-6 text-white"/>,   bg:"bg-[#FF3366]", shape:'12px 40px 12px 40px', title:"Mais acolhimento, mais impacto", desc:"Melhores condições para receber crianças, famílias e parceiros." },
-                { ico:<IcoNetwork c="w-6 h-6 text-[#1A1A1A]"/>, bg:"bg-[#D4FF00]", shape:'40px 12px 40px 12px', title:"Fortalecimento da rede",     desc:"Um centro de referência para a garantia de direitos no Tocantins." },
-                { ico:<IcoHeart2 c="w-6 h-6 text-[#1A1A1A]"/>,  bg:"bg-[#B8F070]", shape:'12px 40px 12px 40px', title:"Sustentabilidade da missão", desc:"Um lar permanente para seguir transformando infâncias." },
+                {
+                  shape:'32px 8px 32px 8px', bg:'bg-[#0099FF]',
+                  ico:(
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M2 12L12 3l10 9"/>
+                      <path d="M5 12v7a1 1 0 0 0 1 1h4v-5h4v5h4a1 1 0 0 0 1-1v-7"/>
+                    </svg>
+                  ),
+                  title:'Espaço próprio e adequado',
+                  desc:'Ambientes estruturados para atendimentos, formações e reuniões.'
+                },
+                {
+                  shape:'8px 32px 8px 32px', bg:'bg-[#FF3366]',
+                  ico:(
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="8" cy="7" r="3"/>
+                      <path d="M2 21v-2a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v2"/>
+                      <circle cx="17" cy="8" r="2.5"/>
+                      <path d="M22 21v-1.5a4 4 0 0 0-2.8-3.8"/>
+                    </svg>
+                  ),
+                  title:'Mais acolhimento, mais impacto',
+                  desc:'Melhores condições para receber crianças, famílias e parceiros.'
+                },
+                {
+                  shape:'32px 8px 32px 8px', bg:'bg-[#D4FF00]',
+                  ico:(
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="5" r="2.5"/>
+                      <circle cx="5" cy="19" r="2.5"/>
+                      <circle cx="19" cy="19" r="2.5"/>
+                      <line x1="12" y1="7.5" x2="5.9" y2="16.5"/>
+                      <line x1="12" y1="7.5" x2="18.1" y2="16.5"/>
+                      <line x1="7.5" y1="19" x2="16.5" y2="19"/>
+                    </svg>
+                  ),
+                  title:'Fortalecimento da rede',
+                  desc:'Um centro de referência para a garantia de direitos no Tocantins.'
+                },
+                {
+                  shape:'8px 32px 8px 32px', bg:'bg-[#B8F070]',
+                  ico:(
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                  ),
+                  title:'Sustentabilidade da missão',
+                  desc:'Um lar permanente para seguir transformando infâncias.'
+                },
               ].map((b,i) => (
                 <Reveal key={i} delay={i*80}>
-                  <div className="bg-white text-[#1A1A1A] p-6 flex flex-col gap-4 h-full"
-                    style={{borderRadius: b.shape}}>
-                    <div className={`w-12 h-12 rounded-full ${b.bg} flex items-center justify-center flex-shrink-0`}>{b.ico}</div>
-                    <div>
-                      <h4 className="font-bold text-sm leading-snug mb-2">{b.title}</h4>
-                      <p className="text-xs leading-relaxed" style={{color:'rgba(26,26,26,0.6)'}}>{b.desc}</p>
-                    </div>
+                  <div className="bg-white text-[#1A1A1A] flex flex-col h-full"
+                    style={{borderRadius:b.shape, padding:'28px 24px'}}>
+                    <div className={`w-14 h-14 rounded-full ${b.bg} flex items-center justify-center flex-shrink-0 mb-5`}>{b.ico}</div>
+                    <h4 className="font-bold leading-snug mb-3" style={{fontSize:'13px'}}>{b.title}</h4>
+                    <p className="leading-relaxed" style={{fontSize:'11.5px',color:'rgba(26,26,26,0.6)'}}>{b.desc}</p>
                   </div>
                 </Reveal>
               ))}
