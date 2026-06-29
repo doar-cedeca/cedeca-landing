@@ -37,6 +37,62 @@
 
     @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
     .spin{animation:spin .8s linear infinite}
+
+    /* ═══ NOVA PRIMEIRA DOBRA ═══ */
+    .s1-bar{background:#F2F000;width:100%}
+    .s1-bar-in{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 48px;min-height:120px;box-sizing:border-box}
+    .s1-logo-l{width:110px;height:auto;flex-shrink:0;object-fit:contain}
+    .s1-logo-r{width:100px;height:auto;flex-shrink:0;object-fit:contain}
+    .s1-center{flex:1;text-align:center}
+    .s1-url-row{display:flex;align-items:baseline;justify-content:center;gap:0;flex-wrap:nowrap}
+    .s1-line-dec{display:inline-block;width:26px;height:1.5px;background:#1A1A1A;vertical-align:middle;margin-right:6px;flex-shrink:0;position:relative;top:-2px}
+    .s1-www{font-size:12px;font-weight:500;color:#1A1A1A;flex-shrink:0}
+    .s1-url{font-size:23px;font-weight:800;color:#1A1A1A;letter-spacing:-0.025em;line-height:1}
+    .s1-sub{font-size:11.5px;color:#1A1A1A;line-height:1.5;max-width:370px;margin:4px auto 0;font-weight:400}
+
+    .s1-hero{position:relative;width:100%;min-height:500px;background-image:url('assets/section1/img-fundo.webp');background-size:cover;background-position:center center;background-repeat:no-repeat;overflow:hidden}
+
+    .s1-blob{position:absolute;top:5%;left:6%;width:460px;background-image:url('assets/section1/blob-azul.svg');background-size:100% 100%;background-repeat:no-repeat;padding:52px 56px 58px 68px;box-sizing:border-box;display:flex;flex-direction:column;align-items:flex-start;min-height:440px}
+    .s1-title{font-size:34px;font-weight:800;color:#2A2A2A;line-height:1.06;letter-spacing:-0.025em;margin:0 0 16px;font-family:'Aeonik',system-ui,sans-serif}
+    .s1-p1{font-size:17px;font-weight:400;color:#2A2A2A;line-height:1.55;margin:0 0 12px;font-family:'Aeonik',system-ui,sans-serif}
+    .s1-p2{font-size:16px;font-weight:700;color:#2A2A2A;line-height:1.5;margin:0 0 22px;font-family:'Aeonik',system-ui,sans-serif}
+    .s1-btn{display:inline-block;border:1.5px solid #2A2A2A;border-radius:999px;padding:9px 22px;font-size:13px;font-weight:700;color:#2A2A2A;text-decoration:none;transition:background .2s,color .2s;cursor:pointer;background:transparent;font-family:'Aeonik',system-ui,sans-serif;white-space:nowrap;flex-shrink:0}
+    .s1-btn:hover{background:#2A2A2A;color:#F2F000}
+
+    @media(max-width:1024px){
+      .s1-bar-in{padding:14px 32px;min-height:108px}
+      .s1-logo-l{width:95px}
+      .s1-logo-r{width:86px}
+      .s1-url{font-size:19px}
+      .s1-sub{font-size:11px;max-width:300px}
+      .s1-hero{min-height:520px}
+      .s1-blob{width:400px;left:4%;padding:46px 50px 52px 60px;min-height:390px}
+      .s1-title{font-size:30px;margin-bottom:14px}
+      .s1-p1{font-size:15px;margin-bottom:10px}
+      .s1-p2{font-size:14px;margin-bottom:18px}
+    }
+    @media(max-width:767px){
+      .s1-bar-in{flex-direction:column;align-items:center;padding:18px 20px;min-height:auto;gap:10px}
+      .s1-url-row{justify-content:center}
+      .s1-logo-l{width:88px}
+      .s1-logo-r{width:78px}
+      .s1-url{font-size:17px}
+      .s1-www{font-size:11px}
+      .s1-sub{font-size:10.5px;max-width:256px}
+      .s1-hero{min-height:610px;background-position:65% center}
+      .s1-blob{position:absolute;left:50%;transform:translateX(-50%);width:min(92vw,360px);top:4%;padding:40px 44px 46px 46px;min-height:0}
+      .s1-title{font-size:27px;margin-bottom:13px}
+      .s1-p1{font-size:14.5px;margin-bottom:9px}
+      .s1-p2{font-size:13.5px;margin-bottom:17px}
+      .s1-btn{font-size:12px;padding:8px 18px}
+    }
+    @media(min-width:1440px){
+      .s1-hero{min-height:560px;background-position:center 35%}
+      .s1-blob{width:490px;left:7%;padding:58px 62px 64px 74px;min-height:470px}
+      .s1-title{font-size:37px;margin-bottom:18px}
+      .s1-p1{font-size:18px;margin-bottom:13px}
+      .s1-p2{font-size:17px;margin-bottom:24px}
+    }
   </style>
 </head>
 <body>
@@ -360,45 +416,64 @@ function App() {
 
       <main>
 
-        {/* ══ HERO ══ */}
-        <section className="max-w-7xl mx-auto px-6 pt-12 pb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            <div>
-              <img src="assets/logos/logo-casa-preta.png" alt="Casa dos Direitos"
-                style={{width:'170px', height:'auto', marginBottom:'52px'}}
-                className="w-[130px] md:w-[170px]" />
-              <Reveal>
-                <h1 className="font-display text-5xl md:text-7xl font-black leading-[0.88] mb-6 uppercase">
-                  Construindo<br/>
-                  <span className="text-[#0099FF]">a Casa dos</span><br/>
-                  <span className="text-[#FF5C39]">Direitos</span>
-                </h1>
-              </Reveal>
-              <Reveal delay={150}>
-                <p className="text-xl md:text-2xl font-medium mb-8 max-w-lg text-[#1A1A1A]/75">
-                  Há quase 20 anos defendendo direitos de crianças e adolescentes. Agora precisamos de um espaço definitivo para continuar.
-                </p>
-                <div className="flex items-start gap-4 bg-[#D4FF00] w-fit mb-8 organic-shape-4" style={{padding:'22px 28px'}}>
-                  <IcoShield c="w-7 h-7 flex-shrink-0 mt-1" />
-                  <p style={{fontWeight:'600',fontSize:'clamp(16px,0.95vw,19px)',lineHeight:'1.38',letterSpacing:'-0.01em',maxWidth:'240px'}}>
-                    Não estamos construindo paredes. Estamos protegendo infâncias e adolescências.
-                  </p>
+        {/* ══ NOVA PRIMEIRA DOBRA ══ */}
+        <section>
+
+          {/* Barra amarela superior */}
+          <div className="s1-bar">
+            <div className="s1-bar-in">
+
+              {/* Logo Casa dos Direitos — esquerda */}
+              <img
+                src="assets/section1/logo-casa-direitos.svg"
+                alt="Casa dos Direitos"
+                className="s1-logo-l"
+              />
+
+              {/* Centro: domínio + texto de apoio */}
+              <div className="s1-center">
+                <div className="s1-url-row">
+                  <span className="s1-line-dec" aria-hidden="true"></span>
+                  <span className="s1-www">www.&nbsp;</span>
+                  <span className="s1-url">doar.cedecato.org.br</span>
                 </div>
-                <button onClick={()=>goTo('doacao')}
-                  className="inline-flex items-center justify-center gap-3 bg-[#1A1A1A] text-[#F2F0E6] rounded-full font-bold hover:bg-[#0099FF] transition-colors duration-300"
-                  style={{minWidth:'300px',height:'72px',padding:'0 36px',fontSize:'18px',fontWeight:'700'}}>
-                  Quero fazer parte <IcoArrow c="w-6 h-6" />
-                </button>
-              </Reveal>
+                <p className="s1-sub">
+                  Um movimento coletivo para construir um espaço permanente de defesa dos direitos de crianças e adolescentes.
+                </p>
+              </div>
+
+              {/* Logo CEDECA — direita */}
+              <img
+                src="assets/section1/logo-cedeca.svg"
+                alt="CEDECA Glória de Ivone"
+                className="s1-logo-r"
+              />
+
+            </div>
+          </div>
+
+          {/* Área hero com imagem de fundo */}
+          <div className="s1-hero">
+
+            {/* Bloco azul orgânico com copy principal */}
+            <div className="s1-blob">
+              <h1 className="s1-title">
+                Construindo<br/>a Casa<br/>dos Direitos
+              </h1>
+              <p className="s1-p1">
+                Há quase 20 anos<br/>
+                defendendo direitos<br/>
+                de crianças e<br/>
+                adolescentes.
+              </p>
+              <p className="s1-p2">
+                Agora precisamos de<br/>
+                um espaço definitivo<br/>
+                para continuar.
+              </p>
+              <a href="#doacao" className="s1-btn">Faça parte dessa construção</a>
             </div>
 
-            <Reveal delay={300} className="relative">
-              <div className="relative aspect-[4/3] w-full overflow-hidden organic-shape-1 float-anim">
-                <div className="absolute inset-0 bg-[#0099FF]/10 mix-blend-multiply z-10 pointer-events-none"></div>
-                <img src="assets/img/1.png" alt="Crianças se abraçando" className="w-full h-full object-cover" />
-                <div className="absolute top-5 right-5 z-20 w-14 h-14 rounded-full bg-[#D4FF00] flex items-center justify-center font-black text-lg">CD</div>
-              </div>
-            </Reveal>
           </div>
         </section>
 
